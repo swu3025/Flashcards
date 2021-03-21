@@ -53,12 +53,15 @@ class CreationViewController: UIViewController {
                 extraAnswerOneText = "Empty"
             }
             
-            if extraAnswerTwoText == nil ||
-                extraAnswerTwoText!.isEmpty {
+            if extraAnswerTwoText == nil || extraAnswerTwoText!.isEmpty {
                 extraAnswerTwoText = "Empty"
             }
         
-            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraAnswerOneText!, extraAnswerTwo: extraAnswerTwoText!)
+            var isExisting = false
+            if initialQuestion != nil {
+                isExisting = true
+            }
+            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraAnswerOneText!, extraAnswerTwo: extraAnswerTwoText!, isExisting: isExisting)
             
             dismiss(animated: true)
         }
