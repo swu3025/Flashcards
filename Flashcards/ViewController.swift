@@ -109,10 +109,7 @@ class ViewController: UIViewController {
             flashcards[currentIndex] = flashcard
         }else{
             flashcards.append(flashcard)
-            print("Added new flashcard")
-            print("We now have \(flashcards.count) flashcards")
             currentIndex = flashcards.count - 1
-            print("Our current index is \(currentIndex)`")
         }
         updateNextPrevButtons()
         updateLabels()
@@ -193,8 +190,6 @@ class ViewController: UIViewController {
 
         }
         UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
-        
-        print("Flashcards saved to UserDefaults")
     }
     
     func readSavedFlashcard(){
